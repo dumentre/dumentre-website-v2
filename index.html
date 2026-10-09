@@ -17,7 +17,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#060a13">
+  <meta name="theme-color" content="#f4f1ea">
 
   <title>Dumentre | Sites, Sistemas e Automações Inteligentes</title>
 
@@ -27,7 +27,7 @@
   <meta property="og:title" content="Dumentre | Sites, Sistemas e Automações Inteligentes">
   <meta property="og:description"
     content="Desenvolvimento premium de sites, sistemas sob medida e automações no WhatsApp para empresas que querem profissionalizar sua presença digital e aumentar vendas.">
-  <meta property="og:image" content="https://dumentre.com/dumentre-logo-white-letters.png">
+  <meta property="og:image" content="https://dumentre.com/og-image.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -35,13 +35,13 @@
   <meta property="twitter:title" content="Dumentre | Sites, Sistemas e Automações Inteligentes">
   <meta property="twitter:description"
     content="Desenvolvimento premium de sites, sistemas sob medida e automações no WhatsApp para empresas que querem profissionalizar sua presença digital e aumentar vendas.">
-  <meta property="twitter:image" content="https://dumentre.com/dumentre-logo-white-letters.png">
+  <meta property="twitter:image" content="https://dumentre.com/og-image.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500&family=Outfit:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Schibsted+Grotesk:wght@400..900&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
@@ -55,8 +55,8 @@
     "legalName": "SIMPLIFICA DESENVOLVIMENTO DE SOFTWARES LTDA",
     "taxID": "31.030.048/0001-76",
     "url": "https://dumentre.com/",
-    "logo": "https://dumentre.com/dumentre-logo-white-letters.png",
-    "image": "https://dumentre.com/dumentre-logo-white-letters.png",
+    "logo": "https://dumentre.com/android-chrome-512x512.png",
+    "image": "https://dumentre.com/og-image.png",
     "email": "simplificasoftwares@gmail.com",
     "telephone": "+55-11-93621-7352",
     "priceRange": "$$",
@@ -92,13 +92,14 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <!-- Header -->
   <header class="main-header">
     <div class="container header-container">
       <a href="#" class="logo-link" aria-label="Dumentre Home">
-        <img src="dumentre-logo-white-letters.png" alt="Logo Dumentre" class="brand-logo" width="38" height="40">
-        <span class="brand-name">Dumentre</span>
+        <img src="assets/brand/dumentre-simbolo-ink.svg" alt="Logo Dumentre" class="brand-logo" width="31" height="32">
+        <span class="brand-name">dumentre</span>
       </a>
 
       <!-- Mobile Hamburger Button -->
@@ -112,16 +113,16 @@
       <!-- Navigation -->
       <nav id="primary-navigation" class="nav-menu">
         <ul class="nav-list">
-          <li><a href="#problemas" class="nav-link">Problemas</a></li>
+          <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+          <li><a href="#cases" class="nav-link">Cases</a></li>
           <li><a href="#solucoes" class="nav-link">Soluções</a></li>
-          <li><a href="#produtos-entrada" class="nav-link">Comece Pequeno</a></li>
           <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
           <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
         <div class="nav-cta-wrapper">
           <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20entender%20como%20voc%C3%AAs%20podem%20ajudar%20minha%20empresa."
-            class="btn btn-primary btn-header btn-whatsapp" target="_blank" rel="noopener">
+            class="btn btn-primary btn-header btn-whatsapp" data-service="geral" data-cta-position="header" target="_blank" rel="noopener">
             <img class="whatsapp-icon" src="assets/icons/brands/whatsapp.svg" alt="" aria-hidden="true" width="20" height="20">
             Falar no WhatsApp
           </a>
@@ -130,312 +131,327 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo">
     <!-- Hero Section -->
     <section class="hero-section">
-      <div class="container hero-container grid-2">
+      <div class="paper-grid" aria-hidden="true"></div>
+      <div class="container hero-container">
         <div class="hero-content">
-          <h1 class="hero-title">Sites, sistemas e automações inteligentes para empresas que querem vender, atender e
-            operar melhor.</h1>
+          <p class="eyebrow"><b>Dumentre</b> Sites · sistemas · automações · São Paulo</p>
+          <h1 class="hero-title">Sites, sistemas e automações inteligentes para empresas que querem <mark>vender, atender e operar melhor.</mark></h1>
           <p class="hero-subtitle">A Dumentre cria soluções digitais enxutas, bem construídas e pensadas para gerar
             oportunidades comerciais hoje e evoluir junto com o seu negócio.</p>
 
           <div class="hero-actions">
             <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20entender%20como%20voc%C3%AAs%20podem%20ajudar%20minha%20empresa."
-              class="btn btn-primary btn-whatsapp" target="_blank" rel="noopener">
+              class="btn btn-primary btn-whatsapp" data-service="diagnostico" data-cta-position="hero" target="_blank" rel="noopener">
               <img class="whatsapp-icon" src="assets/icons/brands/whatsapp.svg" alt="" aria-hidden="true" width="20" height="20">
               <span>Falar no WhatsApp</span>
             </a>
-            <a href="mailto:simplificasoftwares@gmail.com?subject=Contato%20Dumentre%20-%20Solicitação%20de%20Orçamento&body=Olá,%20acessei%20o%20site%20da%20Dumentre%20e%20gostaria%20de%20entender%20como%20vocês%20podem%20ajudar%20minha%20empresa%20no%20meu%20projeto."
-              class="btn btn-secondary">
-              <span>Enviar e-mail</span>
+            <a href="#ofertas" class="btn btn-secondary">
+              <span>Ver ofertas e preços</span>
             </a>
           </div>
           <div class="hero-info-small">
             <span>Conversa inicial sem compromisso</span>
-            <span class="separator-dot"></span>
             <span>Estudo de viabilidade técnica</span>
+            <a href="mailto:simplificasoftwares@gmail.com?subject=Contato%20Dumentre%20-%20Solicitação%20de%20Orçamento&body=Olá,%20acessei%20o%20site%20da%20Dumentre%20e%20gostaria%20de%20entender%20como%20vocês%20podem%20ajudar%20minha%20empresa%20no%20meu%20projeto."
+              class="text-link">
+              <span>Enviar e-mail</span>
+            </a>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="tech-card-container">
-            <!-- Simulated system mockup -->
-            <div class="mockup-window">
-              <div class="mockup-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="mockup-url">dumentre.com/digital-funnel</span>
-              </div>
-              <div class="mockup-body">
-                <div class="funnel-step">
-                  <div class="funnel-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                      <path d="M2 12h20" />
-                    </svg>
-                  </div>
-                  <div class="funnel-text">
-                    <div class="funnel-label">Presença Local & SEO</div>
-                    <div class="funnel-value">Google Maps & Site Veloz</div>
-                  </div>
-                  <div class="funnel-status success">ON</div>
-                </div>
-                <div class="funnel-connector"></div>
-                <div class="funnel-step active">
-                  <div class="funnel-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                      <line x1="8" y1="21" x2="16" y2="21" />
-                      <line x1="12" y1="17" x2="12" y2="21" />
-                    </svg>
-                  </div>
-                  <div class="funnel-text">
-                    <div class="funnel-label">Landing Page de Conversão</div>
-                    <div class="funnel-value">Design Premium e Responsivo</div>
-                  </div>
-                  <div class="funnel-status success">UX/UI</div>
-                </div>
-                <div class="funnel-connector"></div>
-                <div class="funnel-step">
-                  <div class="funnel-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                    </svg>
-                  </div>
-                  <div class="funnel-text">
-                    <div class="funnel-label">WhatsApp & Chatbot 24/7</div>
-                    <div class="funnel-value">Triagem Automatizada & Leads</div>
-                  </div>
-                  <div class="funnel-status success">ATIVO</div>
-                </div>
-                <div class="funnel-connector"></div>
-                <div class="funnel-step alert-step">
-                  <div class="funnel-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                      <polyline points="22 4 12 14.01 9 11.01" />
-                    </svg>
-                  </div>
-                  <div class="funnel-text">
-                    <div class="funnel-label">Observabilidade Ativa (Sentry/Crashlytics)</div>
-                    <div class="funnel-value">Monitoramento e Prevenção de Erros</div>
-                  </div>
-                  <div class="funnel-status alert-status">MONITORANDO</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <a class="hero-visual spec-card" href="#cases" aria-label="Ver o case Julinho Fundamentos">
+          <span class="spec-head"><span>Case nº 01 · Julinho Fundamentos</span><span class="hide-sm">Escola de futebol · Vila Ema</span></span>
+          <span class="spec-img">
+            <img src="assets/cases/julinho-site-desktop.jpg" alt="Tela inicial do site da Julinho Fundamentos feito pela Dumentre (fotos de alunos desfocadas)" width="1440" height="900">
+          </span>
+          <span class="spec-rows">
+            <span><span class="k">Entrega</span><span class="v">Site + campanha</span></span>
+            <span><span class="k">Stack</span><span class="v">Next.js · Cloudflare</span></span>
+            <span><span class="k">Código</span><span class="v">do cliente</span></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section class="manifesto-band" aria-label="Manifesto">
+      <div class="container manifesto-inner">
+        <p><span class="mono">dum interim</span> (latim) = <em>enquanto</em>.</p>
+        <p class="manifesto-line">Enquanto você cuida do negócio, a gente cuida do digital.</p>
       </div>
     </section>
 
     <!-- Problemas Section -->
     <section id="problemas" class="section problems-section">
       <div class="container">
-        <div class="section-header text-center">
-          <span class="badge badge-accent">Obstáculos Comerciais</span>
+        <div class="section-header">
+          <p class="eyebrow"><b>01</b> Obstáculos Comerciais</p>
           <h2 class="section-title">O que está impedindo o crescimento digital do seu negócio?</h2>
           <p class="section-subtitle">Identificamos os principais gargalos que travam as vendas e a eficiência
             operacional de pequenas e médias empresas.</p>
         </div>
 
-        <div class="grid-3 card-grid">
-          <!-- Card 1 -->
-          <div class="card problem-card">
-            <div class="card-icon error-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
-                <line x1="1" y1="20" x2="23" y2="20" />
-                <circle cx="12" cy="11" r="4" />
-              </svg>
-            </div>
+        <ol class="problem-grid">
+          <li class="card problem-card">
+            <span class="card-num">01</span>
             <h3 class="card-title">Site que não passa confiança</h3>
             <p class="card-description">Páginas lentas, mal desenhadas ou desatualizadas que afastam potenciais clientes
               em vez de atraí-los e convertê-los.</p>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="card problem-card">
-            <div class="card-icon error-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v-2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
+          </li>
+          <li class="card problem-card">
+            <span class="card-num">02</span>
             <h3 class="card-title">Dependência exclusiva de indicação</h3>
             <p class="card-description">Sua empresa fica refém do acaso por não possuir canais estruturados de atração e
               aquisição ativa de leads pela internet.</p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="card problem-card">
-            <div class="card-icon error-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                <circle cx="8" cy="10" r="1" />
-                <circle cx="12" cy="10" r="1" />
-                <circle cx="16" cy="10" r="1" />
-              </svg>
-            </div>
+          </li>
+          <li class="card problem-card">
+            <span class="card-num">03</span>
             <h3 class="card-title">WhatsApp bagunçado e lento</h3>
             <p class="card-description">Muitos contatos chegando simultaneamente sem triagem, gerando demora no
               atendimento e perda de clientes.</p>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="card problem-card">
-            <div class="card-icon error-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="8" cy="7" r="4" />
-                <line x1="19" y1="8" x2="19" y2="14" />
-                <line x1="22" y1="11" x2="16" y2="11" />
-              </svg>
-            </div>
+          </li>
+          <li class="card problem-card">
+            <span class="card-num">04</span>
             <h3 class="card-title">Leads perdidos sem organização</h3>
             <p class="card-description">Informações comerciais salvas em cadernos ou chats individuais do WhatsApp,
               impossibilitando o acompanhamento pós-venda.</p>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="card problem-card">
-            <div class="card-icon error-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <polyline points="14 2 14 8 20 8" />
-                <line x1="16" y1="13" x2="8" y2="13" />
-                <line x1="16" y1="17" x2="8" y2="17" />
-                <polyline points="10 9 9 9 8 9" />
-              </svg>
-            </div>
+          </li>
+          <li class="card problem-card">
+            <span class="card-num">05</span>
             <h3 class="card-title">Planilhas manuais e tempo perdido</h3>
             <p class="card-description">Sua equipe gastando horas digitando dados repetitivos e executando processos
               operacionais que deveriam ser automatizados.</p>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="card problem-card">
-            <div class="card-icon error-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            </div>
+          </li>
+          <li class="card problem-card">
+            <span class="card-num">06</span>
             <h3 class="card-title">Falta de visibilidade no Google</h3>
             <p class="card-description">Sua empresa fica invisível nas buscas por serviços e comércios locais na sua
               região, abrindo espaço para os concorrentes dominarem.</p>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- Mid CTA Banner -->
     <section class="mid-cta-banner">
-      <div class="container text-center">
-        <h3 class="banner-title">Identificou um ou mais desses problemas no seu dia a dia?</h3>
-        <p class="banner-subtitle">Nós estruturamos a tecnologia para organizar sua empresa, automatizar processos e
-          melhorar suas vendas.</p>
+      <div class="container mid-cta-inner">
+        <div>
+          <h3 class="banner-title">Identificou um ou mais desses problemas no seu dia a dia?</h3>
+          <p class="banner-subtitle">Nós estruturamos a tecnologia para organizar sua empresa, automatizar processos e
+            melhorar suas vendas.</p>
+        </div>
         <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20entender%20como%20voc%C3%AAs%20podem%20ajudar%20minha%20empresa."
-          class="btn btn-primary btn-banner" target="_blank" rel="noopener">
+          class="btn btn-primary btn-banner" data-service="diagnostico" data-cta-position="problemas" target="_blank" rel="noopener">
           Analisar meu Caso no WhatsApp
         </a>
+      </div>
+    </section>
+
+    <!-- Ofertas Section -->
+    <section id="ofertas" class="section offers-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow"><b>02</b> Ofertas com preço na etiqueta</p>
+          <h2 class="section-title">Escopo fechado, prazo fechado, preço fechado.</h2>
+          <p class="section-subtitle">Três formas de começar sem projeto gigante. Você sabe o que leva, quanto paga e
+            quando fica pronto antes de fechar.</p>
+        </div>
+
+        <div class="offer-grid">
+          <article class="offer-card">
+            <header class="offer-head"><span>Oferta 01</span><span>Presença</span></header>
+            <h3 class="offer-title">Site no Ar em 7 Dias</h3>
+            <p class="offer-desc">Site de até 7 seções com texto escrito por nós, visual próprio, Google, mapa e botão de
+              WhatsApp que mostra de onde veio cada contato.</p>
+            <ul class="offer-list">
+              <li>Texto a partir de uma conversa de 30 minutos</li>
+              <li>SEO local e Search Console</li>
+              <li>Domínio e código no nome da sua empresa</li>
+              <li>30 dias de garantia de ajustes</li>
+            </ul>
+            <dl class="offer-meta">
+              <div><dt>Prazo</dt><dd>7 dias úteis</dd></div>
+              <div><dt>Investimento</dt><dd>R$ 2.900</dd></div>
+            </dl>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20o%20Site%20no%20Ar%20em%207%20Dias."
+              class="btn btn-primary btn-block" data-service="site-7-dias" data-cta-position="ofertas" target="_blank" rel="noopener">Quero meu site</a>
+          </article>
+
+          <article class="offer-card offer-featured">
+            <header class="offer-head"><span>Oferta 02</span><span>Atendimento</span></header>
+            <h3 class="offer-title">Atendente de WhatsApp com IA</h3>
+            <p class="offer-desc">Responde as perguntas frequentes em segundos, de dia e de noite, separa quem quer
+              comprar e passa para você com um resumo pronto.</p>
+            <ul class="offer-list">
+              <li>FAQ montado a partir das suas conversas reais</li>
+              <li>Cada contato registrado em planilha ou CRM</li>
+              <li>Aviso quando chega um cliente quente</li>
+              <li>Monitorado: se parar, a gente sabe antes</li>
+            </ul>
+            <dl class="offer-meta">
+              <div><dt>Prazo</dt><dd>10 a 14 dias úteis</dd></div>
+              <div><dt>Investimento</dt><dd>R$ 3.500 <small>+ R$ 390/mês</small></dd></div>
+            </dl>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20o%20Atendente%20de%20WhatsApp%20com%20IA."
+              class="btn btn-primary btn-block" data-service="atendente-ia" data-cta-position="ofertas" target="_blank" rel="noopener">Quero o atendente</a>
+          </article>
+
+          <article class="offer-card">
+            <header class="offer-head"><span>Oferta 03</span><span>Redes</span></header>
+            <h3 class="offer-title">Campanha Pronta</h3>
+            <p class="offer-desc">Seu Instagram com cara de marca grande na próxima data comemorativa: duas opções de
+              estilo, você escolhe e recebe tudo pronto com legenda.</p>
+            <ul class="offer-list">
+              <li>4 posts, 3 stories e 1 capa de destaque</li>
+              <li>Página de aprovação online</li>
+              <li>Arquivos editáveis e guia de uso</li>
+              <li>Com Kit de Marca: R$ 3.900</li>
+            </ul>
+            <dl class="offer-meta">
+              <div><dt>Prazo</dt><dd>5 dias úteis</dd></div>
+              <div><dt>Investimento</dt><dd>R$ 1.490</dd></div>
+            </dl>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20a%20Campanha%20Pronta."
+              class="btn btn-primary btn-block" data-service="campanha" data-cta-position="ofertas" target="_blank" rel="noopener">Quero a campanha</a>
+          </article>
+        </div>
+
+        <div class="offer-entry">
+          <div>
+            <p class="eyebrow"><b>Não sabe por onde começar?</b></p>
+            <p class="offer-entry-title">Raio-X Digital: vídeo de 15 minutos com as 5 correções que mais trazem cliente.
+              <span class="price-inline">R$ 390, abatidos se você fechar qualquer oferta em 30 dias.</span></p>
+          </div>
+          <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20solicitar%20o%20Raio-X%20Digital."
+            class="btn btn-secondary" data-service="raio-x" data-cta-position="ofertas" target="_blank" rel="noopener">Pedir Raio-X</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section id="cases" class="section cases-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow"><b>03</b> Cases</p>
+          <h2 class="section-title">Trabalho real, mostrado por dentro.</h2>
+          <p class="section-subtitle">Cada projeto vira uma ficha técnica: o problema, o que foi feito e com o quê.
+            Fotos de alunos e clientes ficam desfocadas até haver autorização.</p>
+        </div>
+
+        <article class="case-main">
+          <div class="case-media">
+            <figure class="case-shot case-shot-desktop">
+              <img src="assets/cases/julinho-site-desktop.jpg" alt="Site da Julinho Fundamentos no computador" width="1440" height="900" loading="lazy">
+            </figure>
+            <figure class="case-shot case-shot-mobile">
+              <img src="assets/cases/julinho-site-mobile.jpg" alt="Site da Julinho Fundamentos no celular" width="390" height="844" loading="lazy">
+            </figure>
+            <figure class="case-shot case-shot-post">
+              <img src="assets/cases/julinho-campanha.jpg" alt="Proposta de post da campanha de Dia das Crianças, direção revista" width="720" height="900" loading="lazy">
+            </figure>
+          </div>
+          <div class="case-body">
+            <header class="spec-head case-head"><span>Case nº 01</span><span>Em andamento</span></header>
+            <h3 class="case-title">Julinho Fundamentos</h3>
+            <p class="case-sub">Escola de fundamentos de futebol e futsal desde 1988, na Vila Ema (zona leste de SP).</p>
+            <dl class="case-facts">
+              <div><dt>Problema</dt><dd>35 anos de história espalhados entre site antigo, Instagram e matérias. Interesse chegava pelo WhatsApp sem nenhum caminho claro até a aula experimental.</dd></div>
+              <div><dt>O que fizemos</dt><dd>Site novo com a história, o método e o agendamento de avaliação em destaque; análise da comunicação; direções visuais para a campanha de Dia das Crianças, com página de aprovação.</dd></div>
+              <div><dt>Stack</dt><dd>Next.js, Cloudflare, testes automatizados, acervo organizado.</dd></div>
+              <div><dt>Status</dt><dd>Em validação com a escola. Resultados de matrícula serão publicados aqui quando houver dados.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <div class="capability-grid">
+          <article class="capability">
+            <span class="k">Experiência do fundador</span>
+            <h3>App de mídia nacional nas lojas</h3>
+            <p>Aplicativo iOS e Android de um grupo de mídia de alcance nacional, com login social, vídeo e APIs em nuvem.
+              A mesma engenharia, no tamanho do seu negócio.</p>
+          </article>
+          <article class="capability">
+            <span class="k">Automação com IA</span>
+            <h3>Agentes que trabalham sozinhos</h3>
+            <p>Rotinas que leem e-mails, organizam tarefas e supervisionam outros agentes de código, rodando todos os dias
+              na operação da própria Dumentre.</p>
+          </article>
+          <article class="capability">
+            <span class="k">Marca e campanha</span>
+            <h3>Identidade com regras escritas</h3>
+            <p>Cada cliente recebe um guia visual em texto (cores, letras, componentes) que mantém o padrão mesmo quando
+              outra pessoa produz as peças.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- Soluções Section -->
     <section id="solucoes" class="section solutions-section">
       <div class="container">
-        <div class="section-header text-center">
-          <span class="badge badge-primary">Como Ajudamos</span>
+        <div class="section-header">
+          <p class="eyebrow"><b>04</b> Como Ajudamos</p>
           <h2 class="section-title">Nossas Soluções Principais</h2>
           <p class="section-subtitle">Escolhemos a tecnologia de acordo com o objetivo do projeto, priorizando
             performance, clareza, manutenção e evolução de longo prazo.</p>
         </div>
 
-        <div class="grid-3 card-grid">
-          <!-- Solução 1 -->
+        <div class="solution-grid">
           <div class="card solution-card">
-            <div class="card-icon success-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                <line x1="8" y1="21" x2="16" y2="21" />
-                <line x1="12" y1="17" x2="12" y2="21" />
-              </svg>
-            </div>
+            <svg class="card-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
             <h3 class="card-title">Sites e Landing Pages de Alta Conversão</h3>
             <p class="card-description">Desenvolvimento de páginas ultra-rápidas e responsivas (mobile-first)
               estruturadas com copywriting voltado para vendas e SEO técnico nativo.</p>
           </div>
-
-          <!-- Solução 2 -->
           <div class="card solution-card">
-            <div class="card-icon success-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <circle cx="12" cy="12" r="3" />
-                <line x1="12" y1="2" x2="12" y2="22" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-              </svg>
-            </div>
+            <svg class="card-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
             <h3 class="card-title">Google Perfil da Empresa & SEO Local</h3>
             <p class="card-description">Configuração e otimização da sua ficha no Google Maps e Search para posicionar
               sua empresa à frente na sua região e atrair contatos diretos.</p>
           </div>
-
-          <!-- Solução 3 -->
           <div class="card solution-card">
-            <div class="card-icon success-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-              </svg>
-            </div>
+            <svg class="card-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
             <h3 class="card-title">WhatsApp Business & Chatbots Inteligentes</h3>
             <p class="card-description">Automações de fluxos de atendimento 24/7 para responder dúvidas frequentes,
               qualificar contatos e direcionar leads quentes para o comercial.</p>
           </div>
-
-          <!-- Solução 4 -->
           <div class="card solution-card">
-            <div class="card-icon success-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="8" cy="7" r="4" />
-                <polyline points="17 11 19 13 23 9" />
-              </svg>
-            </div>
+            <svg class="card-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="8" cy="7" r="4" />
+              <polyline points="17 11 19 13 23 9" />
+            </svg>
             <h3 class="card-title">CRM Starter & Organização de Leads</h3>
             <p class="card-description">Mapeamento e estruturação de esteira de vendas para centralizar os dados dos
               seus leads e permitir o acompanhamento correto até o fechamento.</p>
           </div>
-
-          <!-- Solução 5 -->
           <div class="card solution-card">
-            <div class="card-icon success-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                <polyline points="2 17 12 22 22 17" />
-                <polyline points="2 12 12 17 22 12" />
-              </svg>
-            </div>
+            <svg class="card-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg>
             <h3 class="card-title">Sistemas Web Customizados e Enxutos</h3>
             <p class="card-description">Desenvolvimento de painéis administrativos, relatórios, cadastros e lógicas de
               negócios exclusivas para otimizar a operação da sua equipe.</p>
           </div>
-
-          <!-- Solução 6 -->
           <div class="card solution-card">
-            <div class="card-icon success-icon">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-                <line x1="12" y1="18" x2="12.01" y2="18" />
-              </svg>
-            </div>
+            <svg class="card-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+            </svg>
             <h3 class="card-title">E-commerce, Mobile & Soluções Avançadas</h3>
             <p class="card-description">Desenvolvimento de aplicativos iOS/Android dedicados, lojas virtuais robustas ou
               integrações complexas sob demanda e alinhamento de escopo.</p>
@@ -446,177 +462,153 @@
 
     <!-- Produtos de Entrada (Comece Pequeno) Section -->
     <section id="produtos-entrada" class="section entry-products-section">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="badge badge-accent">Pragmatismo Comercial</span>
+      <div class="container entry-layout">
+        <div class="section-header">
+          <p class="eyebrow"><b>05</b> Pragmatismo Comercial</p>
           <h2 class="section-title">Comece pequeno, mas do jeito certo</h2>
           <p class="section-subtitle">Oferecemos soluções de entrada acessíveis para iniciar a profissionalização da sua
             empresa hoje e evoluir gradualmente.</p>
         </div>
 
-        <div class="grid-4 card-grid">
-          <!-- Produto 1 -->
-          <div class="card entry-card">
-            <h4 class="entry-title">Diagnóstico Digital Express</h4>
-            <p class="entry-description">Análise profunda da velocidade do seu site, posicionamento no Google Maps,
-              segurança e fluxos de WhatsApp, com recomendações claras de melhoria.</p>
-            <div class="entry-footer">
-              <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20solicitar%20o%20Diagn%C3%B3stico%20Digital%20Express."
-                class="entry-link" target="_blank" rel="noopener">Solicitar Diagnóstico &rarr;</a>
+        <ul class="entry-list">
+          <li class="entry-item">
+            <div>
+              <h3 class="entry-title">Diagnóstico Digital Express</h3>
+              <p class="entry-description">Análise profunda da velocidade do seu site, posicionamento no Google Maps,
+                segurança e fluxos de WhatsApp, com recomendações claras de melhoria.</p>
             </div>
-          </div>
-
-          <!-- Produto 2 -->
-          <div class="card entry-card">
-            <h4 class="entry-title">Google Perfil Premium</h4>
-            <p class="entry-description">Verificação, setup de categorias, pin preciso no mapa, inserção de fotos
-              corretas e copywriting de apresentação da empresa para ranquear na sua região.</p>
-            <div class="entry-footer">
-              <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20otimizar%20meu%20Google%20Perfil%20com%20o%20servi%C3%A7o%20Premium."
-                class="entry-link" target="_blank" rel="noopener">Estruturar Perfil &rarr;</a>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20solicitar%20o%20Diagn%C3%B3stico%20Digital%20Express."
+              class="entry-link" data-service="diagnostico" data-cta-position="comece-pequeno" target="_blank" rel="noopener">Solicitar Diagnóstico &rarr;</a>
+          </li>
+          <li class="entry-item">
+            <div>
+              <h3 class="entry-title">Google Perfil Premium</h3>
+              <p class="entry-description">Verificação, setup de categorias, pin preciso no mapa, inserção de fotos
+                corretas e copywriting de apresentação da empresa para ranquear na sua região.</p>
             </div>
-          </div>
-
-          <!-- Produto 3 -->
-          <div class="card entry-card">
-            <h4 class="entry-title">WhatsApp Business Profissional</h4>
-            <p class="entry-description">Estruturação de catálogo digital de produtos/serviços, mensagens automatizadas
-              de saudação/ausência e organização de tags de atendimento no aplicativo.</p>
-            <div class="entry-footer">
-              <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20profissionalizar%20meu%20WhatsApp%20Business."
-                class="entry-link" target="_blank" rel="noopener">Profissionalizar App &rarr;</a>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20otimizar%20meu%20Google%20Perfil%20com%20o%20servi%C3%A7o%20Premium."
+              class="entry-link" data-service="google-perfil" data-cta-position="comece-pequeno" target="_blank" rel="noopener">Estruturar Perfil &rarr;</a>
+          </li>
+          <li class="entry-item">
+            <div>
+              <h3 class="entry-title">WhatsApp Business Profissional</h3>
+              <p class="entry-description">Estruturação de catálogo digital de produtos/serviços, mensagens automatizadas
+                de saudação/ausência e organização de tags de atendimento no aplicativo.</p>
             </div>
-          </div>
-
-          <!-- Produto 4 -->
-          <div class="card entry-card">
-            <h4 class="entry-title">Kit Avaliações 5 Estrelas</h4>
-            <p class="entry-description">Design de QR Codes dedicados para balcão/recepção e escrita de roteiros de
-              mensagens persuasivas de pós-venda para coletar reviews positivos no Google.</p>
-            <div class="entry-footer">
-              <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20implementar%20o%20Kit%20Avalia%C3%A7%C3%B5es%205%20Estrelas."
-                class="entry-link" target="_blank" rel="noopener">Implementar Kit &rarr;</a>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20profissionalizar%20meu%20WhatsApp%20Business."
+              class="entry-link" data-service="whatsapp-business" data-cta-position="comece-pequeno" target="_blank" rel="noopener">Profissionalizar App &rarr;</a>
+          </li>
+          <li class="entry-item">
+            <div>
+              <h3 class="entry-title">Kit Avaliações 5 Estrelas</h3>
+              <p class="entry-description">Design de QR Codes dedicados para balcão/recepção e escrita de roteiros de
+                mensagens persuasivas de pós-venda para coletar reviews positivos no Google.</p>
             </div>
-          </div>
-
-          <!-- Produto 5 -->
-          <div class="card entry-card">
-            <h4 class="entry-title">Página de Orçamento Simples</h4>
-            <p class="entry-description">Landing page rápida focada em conversão direta, com cabeçalho limpo, dores,
-              benefícios e botão flutuante para o WhatsApp de vendas da sua empresa.</p>
-            <div class="entry-footer">
-              <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20criar%20uma%20P%C3%A1gina%20de%20Or%C3%A7amento%20Simples."
-                class="entry-link" target="_blank" rel="noopener">Criar Página &rarr;</a>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20implementar%20o%20Kit%20Avalia%C3%A7%C3%B5es%205%20Estrelas."
+              class="entry-link" data-service="kit-avaliacoes" data-cta-position="comece-pequeno" target="_blank" rel="noopener">Implementar Kit &rarr;</a>
+          </li>
+          <li class="entry-item">
+            <div>
+              <h3 class="entry-title">Página de Orçamento Simples</h3>
+              <p class="entry-description">Landing page rápida focada em conversão direta, com cabeçalho limpo, dores,
+                benefícios e botão flutuante para o WhatsApp de vendas da sua empresa.</p>
             </div>
-          </div>
-
-          <!-- Produto 6 -->
-          <div class="card entry-card">
-            <h4 class="entry-title">CRM Starter Setup</h4>
-            <p class="entry-description">Configuração de uma esteira simples em um CRM de mercado para centralizar seus
-              contatos, evitando planilhas bagunçadas ou mensagens esquecidas.</p>
-            <div class="entry-footer">
-              <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20estruturar%20meu%20funil%20com%20o%20CRM%20Starter."
-                class="entry-link" target="_blank" rel="noopener">Configurar CRM &rarr;</a>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20criar%20uma%20P%C3%A1gina%20de%20Or%C3%A7amento%20Simples."
+              class="entry-link" data-service="pagina-orcamento" data-cta-position="comece-pequeno" target="_blank" rel="noopener">Criar Página &rarr;</a>
+          </li>
+          <li class="entry-item">
+            <div>
+              <h3 class="entry-title">CRM Starter Setup</h3>
+              <p class="entry-description">Configuração de uma esteira simples em um CRM de mercado para centralizar seus
+                contatos, evitando planilhas bagunçadas ou mensagens esquecidas.</p>
             </div>
-          </div>
-
-          <!-- Produto 7 -->
-          <div class="card entry-card">
-            <h4 class="entry-title">Automação de Planilhas</h4>
-            <p class="entry-description">Integração simples para salvar dados de formulários ou contatos diretamente em
-              planilhas online em tempo real, eliminando redigitação manual.</p>
-            <div class="entry-footer">
-              <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20criar%20uma%20Automa%C3%A7%C3%A3o%20de%20Planilhas."
-                class="entry-link" target="_blank" rel="noopener">Automatizar Dados &rarr;</a>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20estruturar%20meu%20funil%20com%20o%20CRM%20Starter."
+              class="entry-link" data-service="crm" data-cta-position="comece-pequeno" target="_blank" rel="noopener">Configurar CRM &rarr;</a>
+          </li>
+          <li class="entry-item">
+            <div>
+              <h3 class="entry-title">Automação de Planilhas</h3>
+              <p class="entry-description">Integração simples para salvar dados de formulários ou contatos diretamente em
+                planilhas online em tempo real, eliminando redigitação manual.</p>
             </div>
-          </div>
-
-          <!-- Produto 8 -->
-          <div class="card entry-card">
-            <h4 class="entry-title">Relatório Mensal Digital</h4>
-            <p class="entry-description">Formatação de um sumário executivo direto e legível com as principais métricas
-              de cliques no WhatsApp, acessos ao site e performance técnica.</p>
-            <div class="entry-footer">
-              <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20receber%20o%20Relat%C3%B3rio%20Mensal%20Digital."
-                class="entry-link" target="_blank" rel="noopener">Ver Métricas &rarr;</a>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20criar%20uma%20Automa%C3%A7%C3%A3o%20de%20Planilhas."
+              class="entry-link" data-service="automacao-planilhas" data-cta-position="comece-pequeno" target="_blank" rel="noopener">Automatizar Dados &rarr;</a>
+          </li>
+          <li class="entry-item">
+            <div>
+              <h3 class="entry-title">Relatório Mensal Digital</h3>
+              <p class="entry-description">Formatação de um sumário executivo direto e legível com as principais métricas
+                de cliques no WhatsApp, acessos ao site e performance técnica.</p>
             </div>
-          </div>
-        </div>
+            <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20receber%20o%20Relat%C3%B3rio%20Mensal%20Digital."
+              class="entry-link" data-service="relatorio-mensal" data-cta-position="comece-pequeno" target="_blank" rel="noopener">Ver Métricas &rarr;</a>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- Como Funciona Section -->
     <section id="como-funciona" class="section how-it-works-section">
       <div class="container">
-        <div class="section-header text-center">
-          <span class="badge badge-primary">Fluxo de Trabalho</span>
+        <div class="section-header">
+          <p class="eyebrow"><b>06</b> Fluxo de Trabalho</p>
           <h2 class="section-title">Como funciona nossa entrega</h2>
           <p class="section-subtitle">Adotamos processos ágeis, transparentes e focados em evitar desperdício de tempo e
             recursos do cliente.</p>
         </div>
 
-        <div class="process-steps">
-          <!-- Step 1 -->
-          <div class="step-item">
+        <ol class="process-steps">
+          <li class="step-item">
             <div class="step-number">01</div>
             <div class="step-content">
               <h3 class="step-title">Conversa inicial & diagnóstico</h3>
               <p class="step-text">Entendemos os principais problemas de vendas ou operação do seu negócio, alinhando
                 suas metas comerciais à tecnologia adequada.</p>
             </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="step-item">
+          </li>
+          <li class="step-item">
             <div class="step-number">02</div>
             <div class="step-content">
               <h3 class="step-title">Plano enxuto & escopo claro</h3>
               <p class="step-text">Definimos exatamente o que será entregue, por qual valor e em quais etapas. Você sabe
                 exatamente o que está contratando, sem surpresas.</p>
             </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="step-item">
+          </li>
+          <li class="step-item">
             <div class="step-number">03</div>
             <div class="step-content">
               <h3 class="step-title">Implementação e refino</h3>
               <p class="step-text">Codificamos a solução com design responsivo de alto padrão, assegurando carregamento
                 rápido, SEO técnico e usabilidade impecável.</p>
             </div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="step-item">
+          </li>
+          <li class="step-item">
             <div class="step-number">04</div>
             <div class="step-content">
               <h3 class="step-title">Publicação, acompanhamento e evolução</h3>
               <p class="step-text">Colocamos a solução no ar integrada a ferramentas de monitoramento ativas.
                 Acompanhamos o uso real para propor melhorias baseadas em dados.</p>
             </div>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- Diferenciais Técnicos Section -->
     <section id="diferenciais" class="section technical-differences-section">
       <div class="container">
-        <div class="section-header text-center">
-          <span class="badge badge-accent">Nosso Padrão Técnico</span>
+        <div class="section-header">
+          <p class="eyebrow"><b>07</b> Nosso Padrão Técnico</p>
           <h2 class="section-title">Por que a engenharia da Dumentre é diferente?</h2>
           <p class="section-subtitle">Não apenas entregamos o código. Garantimos que sua estrutura digital permaneça
             segura, rápida e lucrativa.</p>
         </div>
 
-        <div class="grid-2 difference-grid">
+        <div class="difference-grid">
           <div class="difference-item">
-            <div class="diff-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
+            <svg class="diff-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
             <div class="diff-content">
               <h3 class="diff-title">Observabilidade & Monitoramento Ativo</h3>
               <p class="diff-text">Integramos ferramentas como Firebase Crashlytics e Sentry. Se um formulário de
@@ -625,14 +617,11 @@
               </p>
             </div>
           </div>
-
           <div class="difference-item">
-            <div class="diff-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-            </div>
+            <svg class="diff-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
             <div class="diff-content">
               <h3 class="diff-title">Alta Performance & SEO Técnico Nativo</h3>
               <p class="diff-text">Nossos sites são otimizados de forma cirúrgica para carregar instantaneamente,
@@ -640,13 +629,10 @@
                 de buscas.</p>
             </div>
           </div>
-
           <div class="difference-item">
-            <div class="diff-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
-            </div>
+            <svg class="diff-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
             <div class="diff-content">
               <h3 class="diff-title">Sem Lock-in Técnico: O Código é Seu</h3>
               <p class="diff-text">Não prendemos você a planos de hospedagem ou plataformas engessadas. O código-fonte
@@ -654,15 +640,12 @@
                 própria no futuro.</p>
             </div>
           </div>
-
           <div class="difference-item">
-            <div class="diff-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="20" x2="18" y2="10" />
-                <line x1="12" y1="20" x2="12" y2="4" />
-                <line x1="6" y1="20" x2="6" y2="14" />
-              </svg>
-            </div>
+            <svg class="diff-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
             <div class="diff-content">
               <h3 class="diff-title">Decisões de Ajuste Baseadas em Dados</h3>
               <p class="diff-text">Utilizamos dados analíticos reais de cliques e comportamento dos usuários no site ou
@@ -675,85 +658,56 @@
     </section>
 
     <!-- Para Quem É Section -->
-    <section class="section target-audience-section">
+    <section id="para-quem" class="section target-audience-section">
       <div class="container">
-        <div class="section-header text-center">
-          <span class="badge badge-primary">Público-Alvo</span>
+        <div class="section-header">
+          <p class="eyebrow"><b>08</b> Público-Alvo</p>
           <h2 class="section-title">Para quem é a Dumentre?</h2>
           <p class="section-subtitle">Nossos clientes são pequenas e médias empresas que precisam profissionalizar sua
             presença digital e atendimento de forma responsável.</p>
         </div>
 
-        <div class="grid-2 audience-container">
+        <div class="audience-container">
           <div class="audience-text-wrapper">
             <p class="audience-intro">Nossas soluções são pensadas de forma ideal para negócios que lidam diretamente
               com agendamentos, captação de clientes locais ou organização de leads na esteira comercial:</p>
             <ul class="audience-list">
-              <li>
-                <svg class="list-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span><strong>Clínicas e Consultórios:</strong> Médicos, dentistas e fisioterapeutas que buscam
-                  automação de agendamentos e atração de pacientes locais.</span>
-              </li>
-              <li>
-                <svg class="list-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span><strong>Escritórios de Serviços:</strong> Advogados, contadores e consultores precisando de
-                  landing pages de alta credibilidade técnica.</span>
-              </li>
-              <li>
-                <svg class="list-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span><strong>Escolas e Academias:</strong> Cursos e estúdios necessitando organizar a triagem e
-                  recepção de novas matrículas de forma ágil.</span>
-              </li>
-              <li>
-                <svg class="list-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span><strong>Comércio e Prestadores Locais:</strong> Empresas e autônomos que realizam e concentram o
-                  fechamento de vendas pelo WhatsApp.</span>
-              </li>
-              <li>
-                <svg class="list-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span><strong>Empresas em Evolução:</strong> Negócios com planilhas e processos manuais querendo
-                  otimizar e reduzir tarefas repetitivas.</span>
-              </li>
+              <li><span><strong>Clínicas e Consultórios:</strong> Médicos, dentistas e fisioterapeutas que buscam
+                  automação de agendamentos e atração de pacientes locais.</span></li>
+              <li><span><strong>Escritórios de Serviços:</strong> Advogados, contadores e consultores precisando de
+                  landing pages de alta credibilidade técnica.</span></li>
+              <li><span><strong>Escolas e Academias:</strong> Cursos e estúdios necessitando organizar a triagem e
+                  recepção de novas matrículas de forma ágil.</span></li>
+              <li><span><strong>Comércio e Prestadores Locais:</strong> Empresas e autônomos que realizam e concentram o
+                  fechamento de vendas pelo WhatsApp.</span></li>
+              <li><span><strong>Empresas em Evolução:</strong> Negócios com planilhas e processos manuais querendo
+                  otimizar e reduzir tarefas repetitivas.</span></li>
             </ul>
           </div>
-          <div class="audience-visual-wrapper">
-            <div class="audience-quote-box">
-              <span class="quote-mark">“</span>
-              <p class="quote-text">Nosso objetivo comercial é fazer com que a tecnologia trabalhe de verdade para a sua
-                empresa, convertendo cliques em conversas e organizando a operação para você crescer com estabilidade.
-              </p>
-              <div class="quote-author">
-                <span class="author-name">Equipe Dumentre</span>
-                <span class="author-title">Parceiros de Tecnologia & Negócios</span>
-              </div>
-            </div>
-          </div>
+          <figure class="audience-quote-box">
+            <blockquote class="quote-text">Nosso objetivo comercial é fazer com que a tecnologia trabalhe de verdade para a sua
+              empresa, convertendo cliques em conversas e organizando a operação para você crescer com estabilidade.
+            </blockquote>
+            <figcaption class="quote-author">
+              <span class="author-name">Equipe Dumentre</span>
+              <span class="author-title">Parceiros de Tecnologia & Negócios</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="section faq-section">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="badge badge-accent">Dúvidas Frequentes</span>
+      <div class="container faq-layout">
+        <div class="section-header">
+          <p class="eyebrow"><b>09</b> Dúvidas Frequentes</p>
           <h2 class="section-title">Perguntas Úteis</h2>
           <p class="section-subtitle">Esclarecemos as principais dúvidas comerciais e técnicas de forma simples e
             direta.</p>
         </div>
 
         <div class="faq-accordion">
-          <!-- Item 1 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
               <span class="faq-question">Vocês fazem apenas sites ou também criam sistemas?</span>
@@ -765,8 +719,6 @@
                 adequar a tecnologia ao seu momento comercial.</p>
             </div>
           </div>
-
-          <!-- Item 2 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
               <span class="faq-question">Preciso começar com um projeto grande ou complexo?</span>
@@ -778,8 +730,6 @@
                 e, conforme o retorno financeiro surgir, acoplar novas ferramentas, chatbots e integrações de CRM.</p>
             </div>
           </div>
-
-          <!-- Item 3 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
               <span class="faq-question">Vocês desenvolvem soluções em WordPress?</span>
@@ -791,8 +741,6 @@
                 otimizada para performance e velocidade. Não criamos barreiras contra plataformas.</p>
             </div>
           </div>
-
-          <!-- Item 4 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
               <span class="faq-question">Como a Dumentre ajuda minha empresa a captar mais leads?</span>
@@ -805,8 +753,6 @@
                 tags para busca orgânica local.</p>
             </div>
           </div>
-
-          <!-- Item 5 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
               <span class="faq-question">Vocês desenvolvem chatbots automatizados com Inteligência Artificial?</span>
@@ -818,8 +764,6 @@
                 cruciais antes de repassar o contato para a sua equipe humana.</p>
             </div>
           </div>
-
-          <!-- Item 6 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
               <span class="faq-question">Vocês fazem desenvolvimento de aplicativos mobile?</span>
@@ -831,8 +775,6 @@
                 necessitam de notificações push, login, uso de câmera ou GPS nativos e recorrência dedicada.</p>
             </div>
           </div>
-
-          <!-- Item 7 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
               <span class="faq-question">Vocês desenvolvem lojas virtuais completas (e-commerce)?</span>
@@ -845,8 +787,6 @@
                 customizado) junto com você.</p>
             </div>
           </div>
-
-          <!-- Item 8 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
               <span class="faq-question">Como funciona o processo de entrega e acompanhamento?</span>
@@ -858,8 +798,6 @@
                 monitoramento de performance ativo para garantir que nada pare de funcionar.</p>
             </div>
           </div>
-
-          <!-- Item 9 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
               <span class="faq-question">Qual a forma de contato mais rápida para solicitar um orçamento?</span>
@@ -877,15 +815,15 @@
 
     <!-- Final CTA Section -->
     <section class="final-cta-section">
-      <div class="container text-center">
-        <span class="badge badge-accent">Parceria Comercial</span>
+      <div class="container final-cta-inner">
+        <p class="eyebrow"><b>Parceria Comercial</b></p>
         <h2 class="final-cta-title">Pronto para profissionalizar a presença digital da sua empresa?</h2>
         <p class="final-cta-subtitle">Fale com nossos especialistas e descubra a solução ideal para o seu momento de
           negócio.</p>
 
         <div class="final-cta-actions">
           <a href="https://wa.me/5511936217352?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Dumentre%20e%20quero%20entender%20como%20voc%C3%AAs%20podem%20ajudar%20minha%20empresa."
-            class="btn btn-primary btn-large btn-whatsapp" target="_blank" rel="noopener">
+            class="btn btn-primary btn-large btn-whatsapp" data-service="diagnostico" data-cta-position="final" target="_blank" rel="noopener">
             <img class="whatsapp-icon" src="assets/icons/brands/whatsapp.svg" alt="" aria-hidden="true" width="20" height="20">
             Falar no WhatsApp
           </a>
@@ -901,12 +839,12 @@
   <!-- Footer -->
   <footer class="main-footer">
     <div class="container footer-grid">
-      <!-- Info Column -->
       <div class="footer-col info-col">
         <a href="#" class="logo-link footer-logo" aria-label="Dumentre Home">
-          <img src="dumentre-logo-white-letters.png" alt="Logo Dumentre" class="brand-logo" width="34" height="36">
-          <span class="brand-name">Dumentre</span>
+          <img src="assets/brand/dumentre-simbolo-paper.svg" alt="Logo Dumentre" class="brand-logo" width="29" height="30">
+          <span class="brand-name">dumentre</span>
         </a>
+        <p class="footer-tagline">Enquanto você cuida do negócio, a gente cuida do digital.</p>
         <p class="company-legal-name">SIMPLIFICA DESENVOLVIMENTO DE SOFTWARES LTDA</p>
         <p class="company-tax-id">CNPJ: 31.030.048/0001-76</p>
         <p class="company-address">
@@ -916,10 +854,11 @@
         </p>
       </div>
 
-      <!-- Links Column -->
       <div class="footer-col links-col">
         <h4 class="footer-heading">Navegação</h4>
         <ul class="footer-links">
+          <li><a href="#ofertas">Ofertas</a></li>
+          <li><a href="#cases">Cases</a></li>
           <li><a href="#problemas">Problemas</a></li>
           <li><a href="#solucoes">Soluções</a></li>
           <li><a href="#produtos-entrada">Comece Pequeno</a></li>
@@ -929,35 +868,33 @@
         </ul>
       </div>
 
-      <!-- Contact Column -->
       <div class="footer-col contact-col">
         <h4 class="footer-heading">Contato & Perfis</h4>
         <ul class="footer-contacts">
           <li>
-            <span>WhatsApp:</span>
+            <span>WhatsApp</span>
             <a href="https://wa.me/5511936217352" target="_blank" rel="noopener">+55 11 93621-7352</a>
           </li>
           <li>
-            <span>E-mail:</span>
+            <span>E-mail</span>
             <a href="mailto:simplificasoftwares@gmail.com">simplificasoftwares@gmail.com</a>
           </li>
           <li>
-            <span>Instagram:</span>
+            <span>Instagram</span>
             <a href="https://www.instagram.com/dumentre.co/" target="_blank" rel="noopener">@dumentre.co</a>
           </li>
           <li>
-            <span>Facebook:</span>
+            <span>Facebook</span>
             <a href="https://www.facebook.com/dumentre" target="_blank" rel="noopener">Dumentre</a>
           </li>
           <li>
-            <span>Google Maps:</span>
+            <span>Google Maps</span>
             <a href="https://maps.app.goo.gl/G6Bma2tb2nvxVeah9" target="_blank" rel="noopener">Visualizar Mapa</a>
           </li>
         </ul>
       </div>
     </div>
 
-    <!-- Copyright Bar -->
     <div class="footer-bottom">
       <div class="container bottom-container">
         <p class="copyright-text">&copy; 2026 Dumentre. Todos os direitos reservados. Domínio oficial <a

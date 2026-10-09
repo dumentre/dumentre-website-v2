@@ -17,8 +17,13 @@ test.describe("CTA links", () => {
     await expect(heroWhatsapp).toHaveAttribute("rel", /noopener/);
   });
 
-  test("hero email button has correct mailto href", async ({ page }) => {
-    const heroEmail = page.locator(".hero-actions").getByRole("link", { name: /Enviar e-mail/i });
+  test("hero offers button points to the offers section", async ({ page }) => {
+    const heroOffers = page.locator(".hero-actions").getByRole("link", { name: /Ver ofertas e preços/i });
+    await expect(heroOffers).toHaveAttribute("href", "#ofertas");
+  });
+
+  test("hero email link has correct mailto href", async ({ page }) => {
+    const heroEmail = page.locator(".hero-section").getByRole("link", { name: /Enviar e-mail/i });
     await expect(heroEmail).toHaveAttribute("href", new RegExp(`^mailto:${CONTACT_EMAIL}`));
   });
 

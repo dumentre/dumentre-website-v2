@@ -16,9 +16,9 @@ export const selectors = {
 } as const;
 
 export const NAV_SECTIONS = [
-  { label: "Problemas", hash: "#problemas" },
+  { label: "Ofertas", hash: "#ofertas" },
+  { label: "Cases", hash: "#cases" },
   { label: "Soluções", hash: "#solucoes" },
-  { label: "Comece Pequeno", hash: "#produtos-entrada" },
   { label: "Como Funciona", hash: "#como-funciona" },
   { label: "Diferenciais", hash: "#diferenciais" },
   { label: "FAQ", hash: "#faq" },

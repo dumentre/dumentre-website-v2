@@ -28,14 +28,20 @@ test.describe("Navigation", () => {
 
     await expect(solucoesLink).toHaveClass(/active-nav/);
 
-    const problemasLink = page.locator("nav.nav-menu").getByRole("link", { name: "Problemas", exact: true });
-    await expect(problemasLink).not.toHaveClass(/active-nav/);
+    const ofertasLink = page.locator("nav.nav-menu").getByRole("link", { name: "Ofertas", exact: true });
+    await expect(ofertasLink).not.toHaveClass(/active-nav/);
   });
 
   test("footer links resolve to the same real sections", async ({ page }) => {
-    for (const section of NAV_SECTIONS.filter((s) => s.label !== "Comece Pequeno")) {
+    for (const section of NAV_SECTIONS) {
       const target = page.locator(section.hash);
       await expect(target).toHaveCount(1);
+    }
+
+    // Sections that left the header nav stay reachable from the footer.
+    for (const hash of ["#problemas", "#produtos-entrada"]) {
+      await expect(page.locator("footer").locator(`a[href="${hash}"]`)).toHaveCount(1);
+      await expect(page.locator(hash)).toHaveCount(1);
     }
 
     // Footer uses a slightly different label for the FAQ link; confirm it points at #faq too.
