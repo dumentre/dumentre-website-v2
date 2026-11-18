@@ -14,7 +14,7 @@ test.describe("Mobile menu", () => {
 
   test("hamburger is visible and desktop nav list is not", async ({ page }) => {
     await expect(page.locator(selectors.mobileNavToggle)).toBeVisible();
-    await expect(page.locator("nav.nav-menu").getByRole("link", { name: "Problemas", exact: true })).not.toBeVisible();
+    await expect(page.locator("nav.nav-menu").getByRole("link", { name: "Ofertas", exact: true })).not.toBeVisible();
   });
 
   test("opening the menu sets aria-expanded and the active class", async ({ page }) => {
@@ -88,7 +88,7 @@ test.describe("Mobile menu", () => {
     const toggle = page.locator(selectors.mobileNavToggle);
     await toggle.click();
 
-    const link = page.locator("nav.nav-menu").getByRole("link", { name: "Problemas", exact: true });
+    const link = page.locator("nav.nav-menu").getByRole("link", { name: "Ofertas", exact: true });
     await link.click();
 
     await expect(toggle).toHaveAttribute("aria-expanded", "false");

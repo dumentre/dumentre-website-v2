@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 655" width="630" height="655" fill="#15140F" role="img" aria-label="Dumentre">
+  <defs><clipPath id="dm-counter"><path d="M121 116H300A211 209 0 0 1 300 534H121Z"/></clipPath></defs>
+  <path fill-rule="evenodd" d="M20 18H300A310 309 0 0 1 300 636H20Z M107 102H300A225 223 0 0 1 300 548H107Z"/>
+  <g clip-path="url(#dm-counter)">
+    <path d="M140 145L294 319L448 145V221L294 395L140 221Z"/>
+    <path d="M140 266L197 330V520H140Z"/>
+    <path d="M448 266L391 330V520H448Z"/>
+  </g>
+</svg>

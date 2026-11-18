@@ -1,10 +1,9 @@
 import { test, expect } from "@playwright/test";
 
 /**
- * Favicon assets: a dark-solid-background, white D+M monogram (composited from the same
- * dumentre-logo-white-letters.png used live in the header/footer) — never a transparent PNG
- * and never the blue variant. See docs/testing/site-discovery.md for context on why the
- * previous transparent-white favicon.io package wasn't imported as-is.
+ * Favicon assets: ink-background (#15140f) squares with the paper D+M monogram, generated from
+ * assets/brand/dumentre-simbolo-paper.svg by scripts/generate-brand-assets.js — never a
+ * transparent PNG. The browser theme color is the paper tone used by the header.
  */
 test.describe("Favicon", () => {
   test("favicon.ico responds with a real icon, not the HTML fallback", async ({ request }) => {
@@ -43,8 +42,8 @@ test.describe("Favicon", () => {
     const manifest = await response.json();
     expect(manifest.name).toBe("Dumentre");
     expect(manifest.short_name).toBe("Dumentre");
-    expect(manifest.theme_color).toBe("#060a13");
-    expect(manifest.background_color).toBe("#060a13");
+    expect(manifest.theme_color).toBe("#f4f1ea");
+    expect(manifest.background_color).toBe("#15140f");
     expect(manifest.icons).toEqual(
       expect.arrayContaining([
         expect.objectContaining({ src: "/android-chrome-192x192.png", sizes: "192x192" }),
@@ -61,6 +60,6 @@ test.describe("Favicon", () => {
     await expect(page.locator('link[rel="icon"][sizes="16x16"]')).toHaveAttribute("href", "/favicon-16x16.png");
     await expect(page.locator('link[rel="apple-touch-icon"]')).toHaveAttribute("href", "/apple-touch-icon.png");
     await expect(page.locator('link[rel="manifest"]')).toHaveAttribute("href", "/site.webmanifest");
-    await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute("content", "#060a13");
+    await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute("content", "#f4f1ea");
   });
 });

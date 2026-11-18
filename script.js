@@ -101,16 +101,8 @@ function initHeaderScroll() {
   if (!header) return;
 
   function handleScroll() {
-    if (window.scrollY > 50) {
-      header.classList.add("header-scrolled");
-      header.style.paddingTop = "0px";
-      header.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.5)";
-      header.style.backgroundColor = "rgba(4, 7, 14, 0.95)";
-    } else {
-      header.classList.remove("header-scrolled");
-      header.style.boxShadow = "";
-      header.style.backgroundColor = "rgba(6, 10, 19, 0.85)";
-    }
+    // Visual state lives in style.css (.header-scrolled) so the palette stays in one place.
+    header.classList.toggle("header-scrolled", window.scrollY > 50);
   }
 
   window.addEventListener("scroll", handleScroll, { passive: true });
@@ -136,15 +128,7 @@ function initScrollHighlight() {
 
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         navLinks.forEach(link => {
-          link.classList.remove("active-nav");
-          if (link.getAttribute("href") === `#${sectionId}`) {
-            link.classList.add("active-nav");
-            link.style.color = "#ffffff";
-            link.style.borderBottom = "1px solid var(--accent-cyan)";
-          } else {
-            link.style.color = "";
-            link.style.borderBottom = "";
-          }
+          link.classList.toggle("active-nav", link.getAttribute("href") === `#${sectionId}`);
         });
       }
     });
@@ -159,7 +143,7 @@ function initScrollHighlight() {
  */
 function initScrollAnimations() {
   // Add animation CSS classes programmatically to avoid HTML clutter
-  const animateElements = document.querySelectorAll(".card, .step-item, .difference-item, .section-header");
+  const animateElements = document.querySelectorAll(".card, .step-item, .difference-item, .section-header, .offer-card, .case-main, .capability, .entry-item");
   
   if (!("IntersectionObserver" in window)) {
     // Fallback if browser doesn't support IntersectionObserver
