@@ -293,6 +293,7 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .brand-logo {
@@ -346,6 +347,7 @@ img {
   font-size: 14px;
   color: var(--text-secondary);
   transition: color var(--transition-fast);
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -353,7 +355,7 @@ img {
 }
 
 /* Responsive Navigation */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .mobile-nav-toggle {
     display: block;
   }
@@ -423,6 +425,23 @@ img {
   }
   .mobile-nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+/* Intermediate Desktop Navigation Spacing (1025px - 1180px) */
+@media (min-width: 1025px) and (max-width: 1180px) {
+  .nav-menu {
+    gap: 18px;
+  }
+  .nav-list {
+    gap: 16px;
+  }
+  .nav-link {
+    font-size: 13px;
+  }
+  .btn-header {
+    padding: 8px 12px;
+    font-size: 13px;
   }
 }
 
@@ -1436,7 +1455,7 @@ img {
 }
 
 /* Header CTA Observer Visibility control (avoids visual redundancy on page load) */
-@media (min-width: 901px) {
+@media (min-width: 1025px) {
   .nav-cta-wrapper {
     opacity: 1;
     visibility: visible;

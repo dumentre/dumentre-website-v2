@@ -4,6 +4,7 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+  initWhatsAppLinks();
   initMobileMenu();
   initFAQAccordion();
   initHeaderScroll();
@@ -11,6 +12,80 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollAnimations();
   initHeaderCTAObserver();
 });
+
+const WHATSAPP_CAMPAIGN_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+const WHATSAPP_CAMPAIGN_STORAGE_KEY = "dumentre_campaign_context";
+
+/**
+ * Enrich WhatsApp links with campaign context and conversion metadata without coupling
+ * the site to a specific analytics vendor. Existing hrefs remain valid as a no-JS fallback.
+ */
+function initWhatsAppLinks() {
+  const links = document.querySelectorAll('a[href^="https://wa.me/"]');
+  const campaign = getCampaignContext();
+
+  links.forEach((link) => {
+    const url = new URL(link.href);
+    const originalMessage = url.searchParams.get("text");
+    const context = getWhatsAppLinkContext(link);
+
+    if (originalMessage && Object.keys(campaign).length > 0) {
+      url.searchParams.set("text", `${originalMessage}\n\nOrigem: ${formatCampaignContext(campaign)}`);
+      link.href = url.toString();
+    }
+
+    link.addEventListener("click", () => trackWhatsAppClick(context, campaign));
+  });
+}
+
+function getCampaignContext() {
+  const params = new URLSearchParams(window.location.search);
+  const current = Object.fromEntries(
+    WHATSAPP_CAMPAIGN_KEYS
+      .filter((key) => params.has(key))
+      .map((key) => [key, params.get(key).slice(0, 100)])
+  );
+
+  if (Object.keys(current).length > 0) {
+    try {
+      sessionStorage.setItem(WHATSAPP_CAMPAIGN_STORAGE_KEY, JSON.stringify(current));
+    } catch (_) {
+      // Storage can be unavailable in strict privacy modes; the current page still works.
+    }
+    return current;
+  }
+
+  try {
+    return JSON.parse(sessionStorage.getItem(WHATSAPP_CAMPAIGN_STORAGE_KEY)) || {};
+  } catch (_) {
+    return {};
+  }
+}
+
+function getWhatsAppLinkContext(link) {
+  const section = link.closest("section, header, footer");
+  return {
+    event: "whatsapp_click",
+    page: window.location.pathname,
+    service: link.dataset.service || "geral",
+    cta: link.textContent.trim().replace(/\s+/g, " "),
+    cta_position: link.dataset.ctaPosition || section?.id || section?.classList[0] || "unknown"
+  };
+}
+
+function formatCampaignContext(campaign) {
+  return WHATSAPP_CAMPAIGN_KEYS
+    .filter((key) => campaign[key])
+    .map((key) => `${key.replace("utm_", "")}: ${campaign[key]}`)
+    .join(" | ");
+}
+
+function trackWhatsAppClick(context, campaign) {
+  const event = { ...context, ...campaign };
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(event);
+  window.dispatchEvent(new CustomEvent("dumentre:whatsapp_click", { detail: event }));
+}
 
 /**
  * Mobile Navigation Menu Toggle

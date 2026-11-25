@@ -69,4 +69,41 @@ test.describe("CTA links", () => {
     await waLinks.first().getAttribute("href");
     expect(page.url()).toBe(urlBefore);
   });
+
+  test("UTM context is appended to WhatsApp messages without personal data", async ({ page }) => {
+    await page.goto("/?utm_source=google&utm_medium=cpc&utm_campaign=automacoes&utm_content=hero");
+    const heroWhatsapp = page.locator(".hero-actions").getByRole("link", { name: /Falar no WhatsApp/i });
+    const href = new URL((await heroWhatsapp.getAttribute("href"))!);
+    const message = href.searchParams.get("text")!;
+
+    expect(message).toContain("Origem: source: google | medium: cpc | campaign: automacoes | content: hero");
+    expect(message).not.toMatch(/email|telefone|phone/i);
+  });
+
+  test("WhatsApp click emits centralized conversion context", async ({ page }) => {
+    await page.goto("/?utm_source=linkedin&utm_campaign=institucional");
+    const heroWhatsapp = page.locator(".hero-actions").getByRole("link", { name: /Falar no WhatsApp/i });
+
+    await heroWhatsapp.evaluate((link) => link.addEventListener("click", (event) => event.preventDefault()));
+    await heroWhatsapp.click();
+
+    const event = await page.evaluate(() => window.dataLayer.at(-1));
+    expect(event).toMatchObject({
+      event: "whatsapp_click",
+      page: "/",
+      service: "diagnostico",
+      cta_position: "hero",
+      utm_source: "linkedin",
+      utm_campaign: "institucional"
+    });
+  });
+
+  test("campaign context survives navigation in the same session", async ({ page }) => {
+    await page.goto("/?utm_source=instagram&utm_campaign=automacao");
+    await page.goto("/");
+
+    const heroWhatsapp = page.locator(".hero-actions").getByRole("link", { name: /Falar no WhatsApp/i });
+    const href = new URL((await heroWhatsapp.getAttribute("href"))!);
+    expect(href.searchParams.get("text")).toContain("source: instagram | campaign: automacao");
+  });
 });
