@@ -1473,3 +1473,93 @@ img {
   }
 }
 
+
+/* ----------------------------------------------------
+   FORMULÁRIO DE LEAD (lead-site-chatwoot)
+   ---------------------------------------------------- */
+.lead-form {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+}
+
+.lead-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.lead-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lead-field label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.lead-field input,
+.lead-field select {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color-hover);
+  border-radius: var(--border-radius-sm);
+  font: inherit;
+}
+
+.lead-field input:focus-visible,
+.lead-field select:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.lead-field input[aria-invalid="true"],
+.lead-field select[aria-invalid="true"] {
+  border-color: var(--accent-error);
+}
+
+.lead-error {
+  min-height: 1.1em;
+  margin: 0;
+  color: var(--accent-error);
+  font-size: 0.85rem;
+}
+
+/* Campo armadilha: fora da tela, sem ocupar espaço visível. */
+.lead-hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.lead-form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.lead-status {
+  min-height: 1.4em;
+  margin: 0;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.lead-status[data-kind="success"] {
+  color: var(--accent-success);
+}
+
+.lead-status[data-kind="error"] {
+  color: var(--accent-error);
+}
