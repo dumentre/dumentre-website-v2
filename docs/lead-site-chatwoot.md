@@ -72,6 +72,19 @@ Validação compartilhada em `src/utils/lead.js` (navegador e servidor). Resumo:
 
 Antes de implementar, os testes de unidade foram executados e falharam por módulos inexistentes (fase vermelha do TDD).
 
+### Correção de flakiness do E2E de lead (2026-11-25)
+
+Sintoma: `npm run test:e2e:lead` falhou em 1 de 2 rodadas, com o teste de falha de integração recebendo sucesso no Chromium. Em outra rodada, falhou o teste de "mesmo e-mail" no WebKit.
+
+Causa: o simulador do Chatwoot é um único processo com estado compartilhado (contatos, conversas, `fail-next`, `reset`). Com dois projetos em workers paralelos, a falha armada por um teste era consumida pelo envio do outro projeto, e o `reset` do `beforeEach` apagava dados em uso.
+
+Correção: `workers: 1` em `playwright.lead.config.ts` (backup `playwright.lead.config.ts.bak-20261125-2355`). Isolar o estado do simulador por projeto preservaria a paralelização e fica como pendência.
+
+| Comando | Resultado |
+|---|---|
+| `npm run test:e2e:lead` (5 rodadas) | 14/14 em cada rodada (7 Chromium + 7 WebKit) |
+| `npm run test:unit` (3 rodadas) | 32/32 em cada rodada |
+
 ## Cenários da change: situação
 
 | Cenário | Situação |

@@ -11,6 +11,11 @@ const SIM_TOKEN = "sim-token-local-only";
 
 export default defineConfig({
   testDir: "./tests/e2e-lead",
+  // Um único worker: o simulador do Chatwoot é um processo com estado compartilhado
+  // (contatos, conversas, falha armada por `fail-next`, `reset` no beforeEach). Com
+  // projetos em paralelo, um teste consumia a falha armada por outro e apagava dados
+  // em uso. Ver docs/lead-site-chatwoot.md. Isolar o estado por projeto fica como pendência.
+  workers: 1,
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: 0,
