@@ -24,6 +24,8 @@ const PUBLIC_FILES = [
   "index.html",
   "style.css",
   "script.js",
+  "src/lead-form.js",
+  "src/utils/lead.js",
   "dumentre-logo-white-letters.png",
   "assets/icons/brands/whatsapp.svg",
   "favicon.ico",

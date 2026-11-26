@@ -896,6 +896,67 @@
         </div>
       </div>
     </section>
+
+    <section id="contato-lead" class="section lead-form-section" aria-labelledby="lead-form-title">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="badge badge-accent">Fale com a gente</span>
+          <h2 class="section-title" id="lead-form-title">Deixe seus dados e retornamos pelo WhatsApp</h2>
+          <p class="section-subtitle">Preencha o formulário e nossa equipe entra em contato com você.</p>
+        </div>
+
+        <form id="lead-form" class="lead-form" novalidate>
+          <div class="lead-form-grid">
+            <div class="lead-field">
+              <label for="lead-name">Nome completo</label>
+              <input id="lead-name" name="name" type="text" autocomplete="name" maxlength="80" required
+                aria-describedby="lead-name-error">
+              <p class="lead-error" id="lead-name-error" data-error-for="name"></p>
+            </div>
+
+            <div class="lead-field">
+              <label for="lead-whatsapp">WhatsApp (com DDD)</label>
+              <input id="lead-whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel"
+                placeholder="(11) 99999-9999" maxlength="20" required aria-describedby="lead-whatsapp-error">
+              <p class="lead-error" id="lead-whatsapp-error" data-error-for="whatsapp"></p>
+            </div>
+
+            <div class="lead-field">
+              <label for="lead-email">E-mail</label>
+              <input id="lead-email" name="email" type="email" inputmode="email" autocomplete="email"
+                maxlength="120" required aria-describedby="lead-email-error">
+              <p class="lead-error" id="lead-email-error" data-error-for="email"></p>
+            </div>
+
+            <div class="lead-field">
+              <label for="lead-interesse">Interesse</label>
+              <select id="lead-interesse" name="interesse" required aria-describedby="lead-interesse-error">
+                <option value="">Selecione</option>
+                <option value="site-institucional">Site institucional</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="app-mobile">App mobile</option>
+                <option value="chatbot-whatsapp">Chatbot no WhatsApp</option>
+                <option value="crm-automacao">CRM e automações</option>
+                <option value="seo-local">SEO local</option>
+                <option value="outro">Outro</option>
+              </select>
+              <p class="lead-error" id="lead-interesse-error" data-error-for="interesse"></p>
+            </div>
+          </div>
+
+          <!-- Campo armadilha para robôs: oculto para pessoas. -->
+          <div class="lead-hp" aria-hidden="true">
+            <label for="lead-website">Site (não preencher)</label>
+            <input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="lead-form-actions">
+            <button type="submit" class="btn btn-primary btn-large" data-lead-submit>Enviar</button>
+            <p class="lead-status" data-lead-status role="status" aria-live="polite" data-kind="idle"></p>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -967,6 +1028,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script type="module" src="src/lead-form.js"></script>
 </body>
 
 </html>
