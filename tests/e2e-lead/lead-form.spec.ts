@@ -161,3 +161,27 @@ test("mesmo e-mail enviado de novo reaproveita o contato e cria outra conversa",
   expect(contact.custom_attributes.utm_source).toBe("segundo");
   expect(contact.conversation_ids.length).toBe(2);
 });
+
+test("telefone já cadastrado em outro contato com e-mail novo reaproveita o contato existente e cria nova conversa", async ({
+  page,
+  request,
+}) => {
+  const original = "telefone.original@example.com";
+  const novo = "telefone.novo@example.com";
+  await page.goto("/?utm_source=primeiro");
+  await fillLead(page, { email: original });
+  await page.locator("[data-lead-submit]").click();
+  await expect(page.locator("[data-lead-status]")).toHaveText(SUCCESS);
+
+  await page.goto("/?utm_source=segundo");
+  await fillLead(page, { email: novo });
+  await page.locator("[data-lead-submit]").click();
+  await expect(page.locator("[data-lead-status]")).toHaveText(SUCCESS);
+  await expect(page.locator("[data-lead-status]")).not.toHaveText(FAILURE);
+
+  const existing = await getContactByEmail(request, original);
+  expect(existing).not.toBeNull();
+  expect(existing.custom_attributes.utm_source).toBe("segundo");
+  expect(existing.conversation_ids.length).toBe(2);
+  expect(await getContactByEmail(request, novo)).toBeNull();
+});

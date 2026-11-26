@@ -21,6 +21,13 @@ export function createChatwootSim({ token, accountId = '7' }) {
     return [...contacts.values()].find((c) => c.email?.toLowerCase() === email?.toLowerCase());
   }
 
+  /** Compara telefone só por dígitos, como o Chatwoot real faz na checagem de unicidade. */
+  function findByPhone(phone) {
+    const wanted = String(phone ?? '').replace(/\D/g, '');
+    if (!wanted) return undefined;
+    return [...contacts.values()].find((c) => String(c.phone_number ?? '').replace(/\D/g, '') === wanted);
+  }
+
   function publicContact(c) {
     return {
       id: c.id,
@@ -42,6 +49,9 @@ export function createChatwootSim({ token, accountId = '7' }) {
       if (!body?.inbox_id) return json(422, { message: 'inbox_id obrigatório' });
       if (body.email && findByEmail(body.email)) {
         return json(422, { message: 'Email has already been taken' });
+      }
+      if (body.phone_number && findByPhone(body.phone_number)) {
+        return json(422, { message: 'Phone number has already been taken' });
       }
       const id = newId();
       const contact = {
