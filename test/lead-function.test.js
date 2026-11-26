@@ -252,4 +252,74 @@ describe('POST /api/lead — duplicação de contato', () => {
     const res = await post(validBody());
     assert.equal(res.status, 502);
   });
+
+  it('422 por telefone já cadastrado em outro contato (e-mail diferente) → busca por telefone, 201 e conversa no contato 77', async () => {
+    const calls = stubFetch({
+      'POST /api/v1/accounts/7/contacts': () => json(422, { message: 'Phone number has already been taken' }),
+      'GET /api/v1/accounts/7/contacts/search': (body, u) =>
+        json(200, {
+          payload:
+            u.searchParams.get('q') === 'maria@example.com'
+              ? []
+              : [
+                  {
+                    id: 77,
+                    email: 'outra@example.com',
+                    phone_number: '+5511999999999',
+                    contact_inboxes: [{ source_id: 'src-77', inbox: { id: 3 } }]
+                  }
+                ]
+        }),
+      'PUT /api/v1/accounts/7/contacts/77': () => json(200, { id: 77 }),
+      'POST /api/v1/accounts/7/conversations': () => json(200, { id: 904 })
+    });
+    const res = await post(validBody());
+    assert.equal(res.status, 201);
+    assert.deepEqual(await res.json(), { ok: true });
+
+    const searches = calls.filter((c) => c.key === 'GET /api/v1/accounts/7/contacts/search');
+    assert.equal(searches.length, 2, 'deveria buscar por e-mail e depois por telefone');
+    assert.equal(new URL(searches[0].url).searchParams.get('q'), 'maria@example.com');
+    assert.equal(new URL(searches[1].url).searchParams.get('q'), '+5511999999999');
+
+    const put = calls.find((c) => c.key === 'PUT /api/v1/accounts/7/contacts/77');
+    assert.ok(put, 'atributos do contato existente não atualizados');
+    assert.equal(put.body.custom_attributes.utm_source, 'google');
+    assert.equal('email' in put.body, false, 'não pode sobrescrever o e-mail do contato existente');
+
+    const conv = calls.find((c) => c.key === 'POST /api/v1/accounts/7/conversations');
+    assert.ok(conv, 'conversa não criada');
+    assert.equal(conv.body.contact_id, 77);
+    assert.equal(conv.body.source_id, 'src-77');
+    assert.equal(conv.body.inbox_id, 3);
+    assert.equal(conv.body.custom_attributes.utm_source, 'google');
+    assert.equal(conv.body.custom_attributes.utm_campaign, 'black-friday');
+  });
+
+  it('5xx na busca por telefone → 502 e log só com tipo de erro e status', async () => {
+    stubFetch({
+      'POST /api/v1/accounts/7/contacts': () => json(422, { message: 'taken' }),
+      'GET /api/v1/accounts/7/contacts/search': (body, u) =>
+        u.searchParams.get('q') === 'maria@example.com'
+          ? json(200, { payload: [] })
+          : json(500, { error: 'boom tok-test-secret-123 maria@example.com' })
+    });
+    const logs = [];
+    const originalError = console.error;
+    console.error = (...args) => logs.push(args);
+    let res;
+    try {
+      res = await post(validBody());
+    } finally {
+      console.error = originalError;
+    }
+    assert.equal(res.status, 502);
+    assert.equal((await res.json()).ok, false);
+    const logged = JSON.stringify(logs);
+    assert.equal(logged.includes('tok-test-secret-123'), false, 'token vazou no log');
+    assert.equal(logged.includes('maria@example.com'), false, 'e-mail vazou no log');
+    assert.equal(logged.includes('+5511999999999'), false, 'telefone vazou no log');
+    assert.equal(logged.includes('Maria'), false, 'nome vazou no log');
+    assert.deepEqual(logs, [['lead: falha ao enviar ao Chatwoot', 'ChatwootError', 500]]);
+  });
 });

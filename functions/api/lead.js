@@ -100,6 +100,21 @@ async function findContactByEmail(config, email) {
   return items.find((c) => typeof c?.email === 'string' && c.email.toLowerCase() === email) ?? null;
 }
 
+/** Só dígitos: "+55 (11) 99999-9999" e "5511999999999" são o mesmo telefone. */
+function digitsOnly(value) {
+  return String(value ?? '').replace(/\D/g, '');
+}
+
+/** Usado quando o 422 é por telefone já cadastrado em outro contato (e-mail diferente). */
+async function findContactByPhone(config, phone) {
+  const wanted = digitsOnly(phone);
+  if (!wanted) return null;
+  const result = await chatwoot(config, 'GET', `/contacts/search?q=${encodeURIComponent(phone)}`);
+  const list = mustSucceed(result, 'busca de contato por telefone');
+  const items = Array.isArray(list?.payload) ? list.payload : [];
+  return items.find((c) => digitsOnly(c?.phone_number) === wanted) ?? null;
+}
+
 /**
  * Cria (ou reaproveita, se o e-mail já existe) o contato e abre uma conversa na caixa de API.
  * Retorna { contactId, conversationId }.
@@ -119,8 +134,10 @@ export async function createLeadInChatwoot(config, lead) {
   let sourceId;
 
   if (created.status === 422) {
-    // Duplicado (e-mail já cadastrado): reaproveita o contato e atualiza a atribuição do lead mais recente.
-    const existing = await findContactByEmail(config, lead.email);
+    // Duplicado (e-mail ou telefone já cadastrados): reaproveita o contato e atualiza a atribuição do lead mais recente.
+    // Não sobrescreve o e-mail do contato existente: só atributos, contact_inbox e conversa nova.
+    const existing =
+      (await findContactByEmail(config, lead.email)) ?? (await findContactByPhone(config, lead.whatsapp));
     if (!existing) throw new ChatwootError('contato duplicado não encontrado', 422);
     contactId = existing.id;
     mustSucceed(
