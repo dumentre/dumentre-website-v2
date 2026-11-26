@@ -1,0 +1,16 @@
+{
+  "contact_id": 1003,
+  "conversation_id": 3,
+  "inbox_id": 3,
+  "custom_attributes": {
+    "gclid": "e2e-gclid",
+    "fbclid": "e2e-fbclid",
+    "utm_term": "agencia",
+    "interesse": "site-institucional",
+    "utm_medium": "cpc",
+    "utm_source": "teste",
+    "utm_content": "banner",
+    "utm_campaign": "e2e-real",
+    "pagina_origem": "/"
+  }
+}
