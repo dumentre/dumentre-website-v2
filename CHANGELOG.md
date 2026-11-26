@@ -2,7 +2,9 @@
 
 Formato inspirado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
-## [Não lançado]
+## [1.1.0] - 2026-11-26
+
+Publicado no Cloudflare Pages (projeto `dumentre`, branch `main`). Rollback: reverter o merge; commit anterior de `main` = `bbd2ca6`.
 
 ### Adicionado
 - Formulário de lead no site (nome, WhatsApp, e-mail e interesse), com validação no navegador e no servidor.
@@ -17,5 +19,5 @@ Formato inspirado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/)
 ### Mantido
 - Gerador de link wa.me com UTM (`src/utils/whatsapp.js`) sem alterações, com teste de regressão.
 
-### Pendente
-- Integração real com o Chatwoot, configuração das variáveis `CHATWOOT_*` no Pages e deploy (aguardam autorização).
+### Verificado
+- E2E real contra o Chatwoot (conta 2, inbox 3): contato e conversa criados com etiqueta `lead-site-teste` e atributos `utm_*`, `gclid`, `fbclid`, `pagina_origem` (`docs/chatwoot-e2e-real-evidence.json`).
